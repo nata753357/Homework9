@@ -4,8 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homework9</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
+
+    <section>
+        <h1 id="title">Задание 1</h1>
+        <button id="change-text">Скрыть/показать текст</button>
+
+        <script>
+           const hideTextBtn = document.querySelector('#change-text');
+            const titleEl = document.querySelector('#title');
+
+            hideTextBtn.addEventListener('click', () => {
+                if (titleEl.style.display === 'none') {
+                titleEl.style.display = 'block';
+                } else {
+                titleEl.style.display = 'none';
+             } 
+        });
+        </script>
+    </section>
+
+    <section>
+        <p class="task">Задание 2</p>
+        <button class="btn3">Изменить цвет</button>
+
+        <script>
+            const taskEl = document.querySelector('.task');
+            const btnEl3 = document.querySelector('.btn3');
+           
+            btnEl3.addEventListener('click', () => {
+                taskEl.taskContent1 = 'Задание 2';
+                taskEl.style.color = 'blue';
+            });
+        </script>
+    </section>
+
+    <section>
+        <h1 id="myHeading">Задание 3</h1>
+        <button id="changeBtn">Сменить текст</button>
+
+        <script>
+            const btn = document.getElementById('changeBtn');
+            const heading = document.getElementById('myHeading');
+            let isChanged = false;
+    
+            btn.addEventListener('click', () => {
+            heading.classList.remove('fade-in');
+        
+        if (!isChanged) {
+            heading.textContent = "Привет, мир!";
+            isChanged = true;
+            btn.textContent = "Вернуть обратно";
+        } else {
+            heading.textContent = "Задание 3";
+            isChanged = false;
+            btn.textContent = "Сменить текст";
+        }
+    });
+        </script>
+    </section>
+
+    <section>
+        <h1 class="Task">Задание 5</h1>
+        <p class="description">Lorem ipsum dolor sit.</p>
+        <p class="title">Lorem ipsum dolor sit amet consectetur.</p>
+        <p class="title">Lorem ipsum dolor sit amet.</p>
+        <p class="description1">Lorem, ipsum dolor.</p>
+        <p class="description2">Lorem, ipsum dolor.</p>
+        <button class="btn2">Нажми</button>
+
+        <script>
+            const descriptionEl = document.querySelectorAll('.description2');
+            const btnEl2 = document.querySelector('.btn2');
+
+            btnEl2.addEventListener('click', () => {
+            descriptionEl.forEach(element => {
+            element.textContent = 'Новый текст';
+        });
+    });
+        </script>
+    </section>
+
+    <section>
+        <h1>Задание 6</h1>
+        <button class="btn">Добавить элемент</button>
+        <div class="content"></div>
+
+        <script>
+         const btnEl = document.querySelector('.btn');
+         const contentEl = document.querySelector('.content'); 
+
+         btnEl.addEventListener('click', () => {
+             const textEl = document.createElement('p');
+             textEl.textContent = 'Новый абзац'; 
+             textEl.classList.add('new-paragraph'); 
+             contentEl.appendChild(textEl); 
+         });
+        </script>
+    </section>
+   
+    <section>
+        <h1>Задание 7</h1>
+        <p class="title">Пушкин</p>
+        <p class="text__info">Сказка о рыбаке и рыбке</p>
+        <p class="title">Агния Барто</p>
+        <p class="text__info1">Стихи для детей</p>
+        <p class="title">Корней Чуковский</p>
+        <p class="text__info2">Мойдодыр</p>
+        <div class="content"></div>
+        <button class="btn-remove">Удалить элемент</button>
+
+        <script>
+            const btnEl1 = document.querySelector('.btn');
+            const text__infoEL = document.querySelector('.text__info');
+            const btnRemoveEl = document.querySelector('.btn-remove');
+
+            btnRemoveEl.addEventListener('click', function (e){
+            const textInfoEl = document.querySelector('.text__info');
+            textInfoEl.remove();
+     });
+        </script>
+    </section>
     
 </body>
 </html>
